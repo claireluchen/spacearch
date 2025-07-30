@@ -1,4 +1,4 @@
-# UI development for space architecture
+# Human-Environment Connection & Interaction Atlas
 
 We  seek to visually depict the intricate connection between human emotions, psychology, and their surroundings. This interactive website serves as a user-friendly interface to help the public visualize challenges of extreme environments and their intricate relationships to design and behavioral health & performance. 
 The homepage is an overview of factors associated with spaceflight: mission parameters, mediator variables, processes, outcomes, and mission success. <br>
