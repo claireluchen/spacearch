@@ -1,11 +1,12 @@
 # UI development for space architecture
 
-Access here: https://claireluchen.github.io <br>
-This research explores behavioral risks associated with extreme environments, particularly in spaceflights, with the goal of enhancing space architecture designs. We also seek to visually depict the intricate connection between human emotions, psychology, and their surroundings. This interactive website serves as a user-friendly interface to help the public visualize spaceflight challenges and their intricate relationships. It explores behavioral risks with respect to different factors, such as lighting and crew selection. <br> Upon hovering each element of the UI, you see all the factors that could affect the current element and all factors that would be impacted if the element were altered.
+We  seek to visually depict the intricate connection between human emotions, psychology, and their surroundings. This interactive website serves as a user-friendly interface to help the public visualize challenges of extreme environments and their intricate relationships to design and behavioral health & performance. 
 The homepage is an overview of factors associated with spaceflight: mission parameters, mediator variables, processes, outcomes, and mission success. <br>
-Each subsequent layer provides insights into increasingly specific factors. User can hover over each box to learn more about each factor and their connections to others. <br>
+Each subsequent layer provides insights into increasingly specific factors. User can interact with each factor to learn more about their definitions and their causal relationships to other factors. <br>
 
 ## Contributing
+
+Project contributors: Mich Lin (design, content, management), Claire Lu (code base, layer structure), Kara Chou (UI, interactive elements)
 
 The project is written in HTML, CSS, and Javascript. <br>
 The home page is associated with 3 files: index.html, style1.css, zoomLayer1.js. <br>
