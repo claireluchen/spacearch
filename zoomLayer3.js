@@ -3258,6 +3258,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     innerBox.addEventListener("click", function (event) {
       event.stopPropagation(); // Prevent click event from propagating to document
+      
+      // Clean up any arrows from hover when clicking
+      hoveredarrows.forEach(arrow => arrow.remove());
+      hoveredarrows = [];
 
       if (!innerBox.classList.contains("clicked")) {
         resetDiagram();
@@ -3331,7 +3335,8 @@ document.addEventListener("DOMContentLoaded", function () {
             }
           }
         });
-      } else {
+      } 
+      else {
         resetDiagram();
       }
     });

@@ -224,6 +224,7 @@
   z-index: 4;
   transition: all 0.4s ease-in-out;
   opacity: 0;
+  pointer-events: none; /* Make cursor click-through */
 }
 
 /* During click step, apply pulsing animation to fake cursor to simulate clicking movement */

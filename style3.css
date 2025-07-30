@@ -173,7 +173,7 @@ e.g. centered text, font color and size*/
   text-align: center;
   padding: 1% 4%;
   cursor: default; /*do not change cursor shape when hovering over text*/
-  transition: all 0.1s ease-in-out; /* CHANGE TRANSITION TIME */
+  transition: background-color 0.1s ease-in-out; /* CHANGE TRANSITION TIME */
   position: absolute;
 }
 
@@ -947,14 +947,13 @@ e.g. rounded borders, centered elements*/
   /*Specify what happens to the rest of elements upon clicking*/
   background-color: grey;
   color: rgba(0, 0, 0, 0.2);
-  transition: all 0.2s ease-in-out;
 }
 
 .greyed-out-hover {
   /*Specify what happens to the rest of elements upon hovering*/
   background-color: grey;
   color: rgba(0, 0, 0, 0.2);
-  transition: all 0.2s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 
 .clicked {
