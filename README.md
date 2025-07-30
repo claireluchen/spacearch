@@ -6,7 +6,7 @@ Each subsequent layer provides insights into increasingly specific factors. User
 
 ## Contributing
 
-Project contributors: Mich Lin (design, content, management), Claire Lu (code base, layer structure), Kara Chou (UI, interactive elements)
+Project contributors: Mich Lin (design, content, management), Claire Chen (code base, layer structure), Kara Chou (UI, interactive elements)
 
 The project is written in HTML, CSS, and Javascript. <br>
 The home page is associated with 3 files: index.html, style1.css, zoomLayer1.js. <br>
