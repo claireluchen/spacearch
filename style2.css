@@ -102,14 +102,14 @@ Note box2 and box6 appear to fall under same stripe, but is implemented in 2 str
 
 /*Control unique content for each smaller box*/
 /*Selection, Chronic stressors, Acute stressors are laid out top to bottom in box1*/
-.selection {
+/* .selection {
   width: calc(93%);
   height: calc(16%);
   padding: 15px;
   margin-top: 3px;
   top: 0;
   background-color: #999999;
-}
+} */
 
 .chronic_stressors {
   width: calc(93%);
@@ -120,7 +120,7 @@ Note box2 and box6 appear to fall under same stripe, but is implemented in 2 str
 
 .acute_stressors {
   width: calc(93%);
-  height: calc(25%);
+  height: calc(40%);
   padding: 15px;
   background-color: #999999;
 }
