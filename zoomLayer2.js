@@ -37,10 +37,10 @@ window.addEventListener(
 /*HOVERING, displays text within the box
 Define content for each box, CHANGE EXPLANATION TEXTS HERE*/
 var boxContents = {
-  selection: {
-    title: "Selection",
-    explanation: "How we choose crew for the mission",
-  },
+  // selection: {
+  //   title: "Selection",
+  //   explanation: "How we choose crew for the mission",
+  // },
   chronic_stressors: {
     title: "Chronic Stressors",
     explanation: "Stressors that are ever-present",
@@ -56,7 +56,7 @@ var boxContents = {
   individual_traits: {
     title: "Individual Traits",
     explanation:
-      "Individual traits accounting for variation, including genetics and personality. Personality traits are based on Costa and McCrea’s five-factor model of personality, based on empirical research and widely used and adapted as a measurement scale (NEO-PI-R, IPIP-NEO, IPIP-NEO-120 [used by NASA]).",
+      "Individual traits accounting for variation, including genetics and personality. Personality traits are based on Costa and McCrea’s 'Big Five' five-factor model of personality, based on empirical research and widely used and adapted as a measurement scale (NEO-PI-R, IPIP-NEO, IPIP-NEO-120 [used by NASA]).",
   },
   resources: {
     title: "Resources",
