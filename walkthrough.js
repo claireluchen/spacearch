@@ -196,7 +196,7 @@ document.addEventListener("DOMContentLoaded", function () {
       {
         // content: modal with informational text
         content:
-          "How do we think about designing architecture for humans in space?<br><br><strong>Human-Environment Connection & Interaction Atlas (HECIA)</strong> explores behavioral risks associated with isolated, confined, and extreme environments, in particular spaceflight.",
+          "<strong> HECIA (Human-Environment Connection & Interaction Atlas)</strong> is a design tool that helps users explore the impact of isolated, confined, and extreme environments on behavioral health and performance.",
       },
       {
         // hover & target: has user hover over target to move to next step. fake cursor is animated to lead user to box
@@ -206,44 +206,44 @@ document.addEventListener("DOMContentLoaded", function () {
         timeout: 1000,
         // tooltip: tooltip at bottom of screen (instructs user)
         tooltip:
-          '<strong style="color: #4CAF50;">Hovering</strong> over boxes reveals their definitions.',
+          '<strong style="color: #4CAF50;">Hover</strong> over boxes to see <br> their definitions',
       },
       {
         // zoom: shows zoom in animation, which minimizes to top left. only allows zoom in.
         zoom: true,
         tooltip:
-          '<strong style="color: #4CAF50;">Zooming</strong> into each subsequent layer adds complexity.',
+          '<strong style="color: #4CAF50;">Zoom in</strong> to go to the next layer',
       },
       {
         // zoom_mini: same as zoom, but only shows minimized zoom animation
         zoom_mini: true,
         tooltip:
-          'You have reached the second layer! <strong style="color: #4CAF50;">Zoom in</strong> once more to reach the final layer of complexity.',
+          'This is second layer. <br> <strong style="color: #4CAF50;">Zoom in</strong> again to go to the last layer',
       },
       {
         hover: true,
         target: ".openness",
         tooltip:
-          'You have reached the final layer! <strong style="color: #4CAF50;">Hovering</strong> on a factor reveals its definition and related factors.',
+          'This is the last layer. <br> <strong style="color: #4CAF50;">Hover</strong> over a factor to see its definition and connections ->',
       },
       {
         // click: has user click on target to move to next step. fake cursor is animated to lead user to click
         click: true,
         target: ".openness",
         tooltip:
-          '<strong style="color: #4CAF50;">Clicking</strong> on a factor solidifies the state of the diagram.',
+          '<strong style="color: #4CAF50;">Click</strong> on a factor to set the view',
       },
       {
         hover: true,
         target: ".curiosity",
         tooltip:
-          '<strong style="color: #4CAF50;">Hovering</strong> on related factors reveals their relationships.',
+          'Then <strong style="color: #4CAF50;">hover</strong> on a connection to read about their relationship ->',
       },
       {
         // clickanywhere: has user click anywhere on screen to move to next step. resets third layer.
         clickanywhere: true,
         tooltip:
-          '<strong style="color: #4CAF50;">Clicking</strong> once more resets the diagram.',
+          '<strong style="color: #4CAF50;">Click anywhere</strong> to reset the view',
       },
       {
         // tipContent: modal with informational text (related to website mechanics - says "TIP" at top)
@@ -288,14 +288,14 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
           </div>
           <br>
-          The <strong style="color: #4CAF50;">+</strong> and <strong style="color: #4CAF50;">-</strong> buttons navigate between layers.<br><br>
-          The <strong style="color: #4CAF50;">?</strong> button summarizes this walkthrough.
+          Use <strong style="color: #4CAF50;">+</strong> and <strong style="color: #4CAF50;">-</strong> buttons to move between layers<br><br>
+          The <strong style="color: #4CAF50;">?</strong> button summarizes this walkthrough
         `,
         buttons: true, // To show +, -, and ? buttons (previously hidden)
       },
       {
         final: true, // Cleanup buttons
-        content: `Have fun exploring! Please note that this framework is a point of departure. The relationships mapped here are just as important as the arguments, reactions, and agreements that follow. We welcome thoughts and dialogue sent to hecia-info@mit.edu.`,
+        content: `Have fun exploring! Please note that this framework is a point of departure. The relationships mapped here are just as important as the arguments, reactions, and agreements that follow. <br><br> We welcome thoughts and dialogue sent to <br> <a href= "mailto:hecia-info@mit.edu">hecia-info@mit.edu</a>`,
         buttonText: "Finish",
       },
     ];
