@@ -18,10 +18,10 @@ document.addEventListener("DOMContentLoaded", function () {
     popup.innerHTML = `
         <div class="popup-content">
             <span class="close" onclick="closePopup()">&times;</span>
-            <p>How do we think about designing architecture for humans in space?</p>
-            <p><strong>Human-Environment Connection & Interaction Atlas (HECIA)</strong> explores behavioral risks associated with isolated, confined, and extreme environments, in particular spaceflight. We visually depict the intricate connections between the human and the environment through a "Directed Acyclic Graph" -- meaning the connections never form a loop. Recognizing the complexity of human-environment relationship, this framework serves as a starting point to consider relationships between habitat and human, and where design can strengthen, modify, and interact with these relationships.</p>
-            <p>The homepage is an overview of factors associated with designing human habitation in these environments. <strong>Zoom</strong> into each subsequent layer to add more complexity. <strong>Hover</strong> over each box for their definitions. <strong>Click</strong> on a factor and hover over its related boxes to read about their relationships.</p>
-            <p>This framework is a point of departure. The relationships mapped here are just as important as the arguments, reactions, and agreements that follow. We welcome thoughts and dialogue sent to hecia-info@mit.edu. </p>
+            <p>How do we think about designing architecture for humans in austere environments?</p>
+            <p><strong>Human-Environment Connection & Interaction Atlas (HECIA)</strong> explores behavioral risks associated with isolated, confined, and extreme environments, for spaceflight and beyond (post-disaster relief, high-density urban housing, Ant/arctica). We visually depict the intricate connections between the human and the environment through a "Directed Acyclic Graph" -- meaning the connections never form a loop. Recognizing the complexity of human-environment relationship, this framework serves as a starting point to consider relationships between habitat and human, and where design can strengthen, modify, and interact with these relationships.</p>
+            <p><strong>Zoom in and out</strong> to navigate between layers. <strong>Hover</strong> over each box to see their definitions. <strong>Click</strong> on a factor to set the view and <strong>then hover</strong> over its connected factors to read about their relationships.</p>
+            <p>This framework is a point of departure. The relationships mapped here are just as important as the arguments, reactions, and agreements that follow. We welcome thoughts and dialogue sent to <a href= "mailto:hecia-info@mit.edu">hecia-info@mit.edu</a></p>
             <button id="launchWalkthroughBtn" class="launch-walkthrough">Launch Walkthrough</button>
         </div>
     `; // Content
