@@ -1,16 +1,17 @@
+/*Container where all boxes are stored in*/
 body,
 html {
-  /*Container where all boxes are stored in*/
   margin: 0;
+  padding: 0;
   height: 100%;
   width: 100%;
   overflow: hidden;
-  background-color: #bcd8e5;
+  background-color: #d2eaf7;
 }
 .container {
   display: flex;
   width: 100vw;
-  height: 100dvh;
+  height: 100vh;
   justify-content: space-between;
 }
 
@@ -19,21 +20,31 @@ rounded borders, text size and font*/
 .box {
   overflow: hidden;
   display: flex;
-  flex-direction: column; /* Arrange content in a column */
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
   box-sizing: border-box;
   font-family: monospace, monospace;
-  font-size: 13px;
+  font-size: 14px;
   align-items: center;
   position: relative;
-  text-align: center;
 }
 
+/*Vertical grouping of boxes
+box1: crew selection, chronic stressors, acute stressors
+box2: personality trait, environmental stressors, designed features
+box6: crew composition, resources, operational stressors
+box3: team processes, individual processes
+box4: performance, mood and effect
+box5: loss of mission, loss of crew life, quality of life
+Note box2 and box6 appear to fall under same stripe, but is implemented in 2 stripes
+*/
 .box1,
 .box3,
 .box4,
 .box5,
 .box6 {
-  margin-right: 0.5%; /*Adding space between the columns*/
+  margin-right: 0.5%; /*adding white space between the columns*/
 }
 
 .box1,
@@ -42,152 +53,189 @@ rounded borders, text size and font*/
 .box4,
 .box5,
 .box6 {
-  /*Make sure everything is centered*/
+  /*all contents are centered*/
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/*Control width of each column*/
+/*Rounded border, color, etc. unique to each grouping of boxes*/
 .box1 {
-  width: calc(12vw);
+  width: calc(15vw);
+  background-color: #b4b4b4; /*5ba6ea*/
+  border-radius: 15px;
   margin-left: 0.5%;
 }
 
 .box2 {
-  width: calc(18vw);
-  margin-right: 0.2%;
-}
-
-.box6 {
-  width: calc(16vw);
+  width: calc(20vw);
+  background-color: #94ecff;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
 }
 
 .box3 {
-  width: calc(10vw);
+  width: calc(20vw);
+  background-color: #ffcbfb;
+  border-radius: 15px;
 }
 
 .box4 {
-  width: calc(15vw);
-  margin-right: 0px;
+  width: calc(25vw);
+  background-color: #ffd54d;
+  border-radius: 15px;
+  margin-right: 0%;
 }
 
 .box5 {
   width: 0;
+  background-color: #b4b4b4;
+  border-radius: 15px;
 }
 
-/*explanation box on the right side*/
-.explanation {
-  margin-right: 0;
-  width: calc(25%);
-  border-color: rgb(49, 169, 137);
-  background-color: rgb(209, 235, 228);
-  color: black;
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  padding: 1%;
-  height: 100vh;
-  overflow-y: hidden; /* Hide overflow in box so we don't see scrollbar */
-  box-sizing: border-box;
+.box6 {
+  width: calc(20vw);
+  background-color: #94ecff;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
 
-/*features common to smaller boxes,
-e.g. centered text, font color and size*/
-/* .crew_selection, */
-.distance_from_home_earth,
-.mission_duration,
-.communication_delay,
-.isolated,
-.confined,
-.extreme,
-.resource_constrained,
-.unplanned_events,
-.mission_demands,
-.life_mission_events,
-.crew_size,
-.social_support,
-.density,
-.social_monotony,
-.group_living,
-.extraversion,
-.agreeableness,
-.neuroticism,
-.resilience,
-.openness,
-.conscientiousness,
-.genetics,
-.psychological_resources,
-.training_and_preparation,
-.ground_support,
-.medical_capability,
-.family_and_friends,
-.supplies,
-.food,
-.exercise_equipment,
-.ergonomics,
-.circulation,
-.privacy,
-.lighting,
-.environmental_monotony,
-.layout,
-.reconfigurability,
-.fixtures,
-.light_dark_cycles,
-.altered_gravity,
-.atmosphere,
-.radiation,
-.environmental_control,
-.habitable_volume,
-.acoustics,
-/* .nutrition, */
-.physical_workload,
-.cognitive_workload,
-.media_attention,
-.transition_processes,
-.action_processes,
-.interpersonal_processes,
-.stress_regulation,
-.place_attachment,
-.sleep,
-.physical_health,
-.crew_performance,
-.stress,
-.fatigue,
-.anxiety,
-.autonomy,
-.situation_awareness,
-.trust,
-.curiosity,
-.kinship,
-.boredom,
-.depression,
-.nostalgia_homesickness,
-.positive_mood {
-  border-radius: 10px;
-  box-sizing: border-box;
-  color: rgb(69, 65, 65);
-  font-size: 11px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 1% 4%;
-  cursor: default; /*do not change cursor shape when hovering over text*/
-  transition: background-color 0.1s ease-in-out; /* CHANGE TRANSITION TIME */
-  position: absolute;
+/*Control unique content for each smaller box*/
+/*Selection, Chronic stressors, Acute stressors are laid out top to bottom in box1*/
+/* .selection {
+  width: calc(93%);
+  height: calc(16%);
+  padding: 15px;
+  margin-top: 3px;
+  top: 0;
+  background-color: #999999;
+} */
+
+.chronic_stressors {
+  width: calc(93%);
+  height: calc(59%);
+  padding: 15px;
+  background-color: #999999;
 }
 
-/*Features common to second layer boxes
-e.g. rounded borders, centered elements*/
-/* .selection, */
+.acute_stressors {
+  width: calc(93%);
+  height: calc(40%);
+  padding: 15px;
+  background-color: #999999;
+}
+
+/*Personality trait, Environmental stressors, Designed features
+lay top to bottom in box2*/
+.individual_traits {
+  width: calc(96%);
+  height: calc(48%);
+  margin-left: 2.5%;
+  margin-top: 3px;
+  padding: 15px;
+  background-color: #56b4e9;
+}
+
+.environmental_stressors {
+  width: calc(96%);
+  height: calc(27%);
+  margin-left: 2.5%;
+  padding: 15px;
+  background-color: #56b4e9;
+}
+
+.designed_features {
+  width: calc(96%);
+  height: calc(31%);
+  margin-left: 2.5%;
+  padding: 15px;
+  background-color: #56b4e9;
+}
+
+/*Crew composition, Resources, Operational stressors
+lay top to bottom in box6*/
+.social_composition {
+  width: calc(96%);
+  height: calc(31%);
+  margin-right: 2.5%;
+  margin-top: 3px;
+  padding: 15px;
+  background-color: #56b4e9;
+}
+
+.resources {
+  width: calc(96%);
+  height: calc(47%);
+  margin-right: 2.5%;
+  padding: 15px;
+  background-color: #56b4e9;
+}
+
+.operational_stressors {
+  width: calc(96%);
+  height: calc(22%);
+  margin-right: 2.5%;
+  padding: 15px;
+  background-color: #56b4e9;
+}
+
+/*Team processes, individual processes lay top to bottom in box3*/
+.team_processes {
+  width: calc(93%);
+  height: calc(48%);
+  margin-top: 3px;
+  padding: 15px;
+  background-color: #cc79a7;
+}
+
+.individual_processes {
+  width: calc(93%);
+  height: calc(52%);
+  padding: 15px;
+  background-color: #cc79a7;
+}
+
+/*Performance, Mood and effect lay top to bottom in box4*/
+.behavioral_health_and_performance_outcomes {
+  width: calc(93%);
+  height: calc(100%);
+  margin-top: 3px;
+  padding: 15px;
+  background-color: #e69f00;
+}
+
+/* .mood_and_effect {
+    width: calc(93%);
+    height: calc(55%);
+    padding: 20px;
+    background-color: #E69F00;
+} */
+
+/*Loss of Mission, Loss of crew life, Quality of life lay top to bottom in box5*/
+/* .loss_of_mission {
+    width: calc(93%);
+    height: calc(33%);
+    background-color: #999999;
+}
+
+.loss_of_crew_life {
+    width: calc(93%);
+    height: calc(33%);
+    background-color: #999999;
+}
+
+.quality_of_life {
+    width: calc(93%);
+    height: calc(33%);
+    background-color: #999999;
+} */
+
+/*Features common to all the small boxes*/
+.selection,
 .chronic_stressors,
 .acute_stressors,
 .social_composition,
 .individual_traits,
-.individual_traits_invisible,
-.social_composition_invisible,
-.team_processes_invisible,
 .resources,
 .environmental_stressors,
 .designed_features,
@@ -195,7 +243,6 @@ e.g. rounded borders, centered elements*/
 .team_processes,
 .individual_processes,
 .behavioral_health_and_performance_outcomes,
-.mood_and_effect,
 .loss_of_mission,
 .loss_of_crew_life,
 .quality_of_life,
@@ -204,769 +251,56 @@ e.g. rounded borders, centered elements*/
 .quality_of_life {
   border-radius: 15px;
   box-sizing: border-box;
+  margin-bottom: 1%;
+  text-align: center;
+  color: white;
   display: flex;
   justify-content: center;
+  align-items: center;
+  cursor: default; /*do not change cursor shape when hovering over text*/
+}
+
+/* Box content - restore original styles */
+.box > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  margin-bottom: 0.5dvh; /*add margin to the bottom of the boxes*/
-  padding-top: 2dvh;
-  color: rgb(0, 0, 0, 0.7);
-}
-
-/*add margin to the top of the top boxes*/
-/* .selection, */
-.chronic_stressors,
-.individual_traits,
-.social_composition,
-.team_processes,
-.behavioral_health_and_performance_outcomes,
-.loss_of_mission {
-  margin-top: 0.5dvh;
-}
-
-/*Features unique to individual smaller boxes*/
-/* .selection {
-  width: calc(100%);
-  height: calc(100% * 0.14);
-  background-color: #dbd7d7;
-} */
-
-/* .crew_selection {
-  width: calc(80%);
-  height: calc(6%);
-  position: absolute;
-  top: calc(6%);
-  right: 10%;
-  background-color: #929090;
-} */
-
-/*--------------------------------------*/
-/*Boxes laying inside chronic stressors*/
-.chronic_stressors {
-  width: calc(100%);
-  height: calc(100% * 0.72);
-  background-color: #dbd7d7;
-}
-
-.communication_delay {
-  width: calc(80%);
-  height: calc(7%);
-  top: calc(7%);
-  right: 10%;
-  background-color: #929090;
-}
-
-.distance_from_home_earth {
-  width: calc(80%);
-  height: calc(7%);
-  top: calc(16%); /*relative to top of page*/
-  right: 10%; /*relative to chronic_stressors*/
-  background-color: #929090;
-}
-
-.mission_duration {
-  width: calc(80%);
-  height: calc(7%);
-  top: calc(25%);
-  right: 10%;
-  background-color: #929090;
-}
-
-.isolated {
-  width: calc(40%);
-  height: calc(7%);
-  top: calc(35%);
-  left: 7%;
-  background-color: #929090;
-}
-
-.extreme {
-  width: calc(40%);
-  height: calc(7%);
-  top: calc(40%);
-  right: 6%;
-  background-color: #929090;
-}
-
-.confined {
-  width: calc(40%);
-  height: calc(7%);
-  top: calc(44%);
-  left: 7%;
-  background-color: #929090;
-}
-
-.resource_constrained {
-  width: calc(80%);
-  height: calc(7%);
-  top: calc(53%);
-  left: 10%;
-  background-color: #929090;
-}
-
-.mission_demands {
-  width: calc(80%);
-  height: calc(7%);
-  top: calc(62%);
-  left: 10%;
-  background-color: #929090;
-}
-
-/*--------------------------------------*/
-/*Boxes laying inside acute stressors*/
-.acute_stressors {
-  width: calc(100%);
-  height: calc(100% * 0.27);
-  background-color: #dbd7d7;
-}
-
-.unplanned_events {
-  width: calc(80%);
-  height: calc(7%);
-  top: calc(80%);
-  left: 10%;
-  background-color: #929090;
-}
-
-.life_mission_events {
-  width: calc(80%);
-  height: calc(7%);
-  position: absolute;
-  top: calc(90%);
-  right: 10%;
-  background-color: #929090;
-}
-/*-----------------------------------------*/
-/*Boxes laying inside personality trait*/
-.individual_traits {
-  width: calc(100%);
-  height: calc(100% * 0.28);
-  background-color: #94ecff;
-}
-
-.individual_traits_invisible {
-  /*Overall mask for the bigger individual traits*/
-  position: absolute;
-  left: 0%;
-  height: 28%;
-  width: 100%;
-  top: 0.5%;
-  background-color: #94ecff;
-  opacity: 100%;
-}
-
-.extraversion {
-  width: calc(38%);
-  height: calc(5%);
-  top: calc(6.5%);
-  left: 5%;
-  background-color: #56b4e9;
-}
-
-.agreeableness {
-  width: calc(44%);
-  height: calc(5%);
-  top: calc(13.5%);
-  left: 5%;
-  background-color: #56b4e9;
-}
-
-.neuroticism {
-  width: calc(44%);
-  height: calc(5%);
-  top: calc(13.5%);
-  right: 5%;
-  background-color: #56b4e9;
-}
-
-.resilience {
-  width: calc(32%);
-  height: calc(5%);
-  top: calc(20.5%);
-  left: 4%;
-  background-color: #56b4e9;
-}
-
-.openness {
-  width: calc(28%);
-  height: calc(5%);
-  top: calc(20.5%);
-  right: 34%;
-  background-color: #56b4e9;
-}
-
-.conscientiousness {
-  width: calc(50%);
-  height: calc(5%);
-  top: calc(6.5%);
-  right: 5%;
-  background-color: #56b4e9;
-}
-
-.genetics {
-  width: calc(28%);
-  height: calc(5%);
-  top: calc(20.5%);
-  right: 4%;
-  background-color: #56b4e9;
-}
-
-/*-----------------------------------------*/
-/*Boxes laying inside crew composition*/
-.social_composition {
-  width: calc(100%);
-  height: calc(100% * 0.31);
-  background-color: #94ecff;
-}
-
-.social_composition_invisible {
-  /*Overall mask for the bigger social composition box*/
-  position: absolute;
-  left: 0%;
-  height: 31%;
-  width: 100%;
-  top: 0.5%;
-  background-color: #94ecff;
-  opacity: 100%;
-}
-
-.crew_size {
-  width: calc(40%);
-  height: calc(5%);
-  top: calc(6.5%);
-  left: 5%;
-  background-color: #56b4e9;
-}
-
-.social_support {
-  width: calc(40%);
-  height: calc(7%);
-  top: calc(22.5%);
-  left: 30%;
-  background-color: #56b4e9;
-}
-
-.social_monotony {
-  width: calc(40%);
-  height: calc(7%);
-  top: calc(13.5%);
-  left: 5%;
-  background-color: #56b4e9;
-}
-
-.group_living {
-  width: calc(40%);
-  height: calc(7%);
-  top: calc(13.5%);
-  right: 5%;
-  background-color: #56b4e9;
-}
-
-.density {
-  width: calc(40%);
-  height: calc(5%);
-  top: calc(6.5%);
-  right: 5%;
-  background-color: #56b4e9;
-}
-/*-----------------------------------------*/
-/*Boxes laying inside resources*/
-.resources {
-  width: calc(100%);
-  height: calc(100% * 0.47);
-  top: calc(80% * 0.4 + 80px);
-  background-color: #94ecff;
-}
-
-.psychological_resources {
-  width: calc(80%);
-  height: calc(6%);
-  top: calc(38%);
-  left: 10%;
-  background-color: #56b4e9;
-}
-
-.supplies {
-  width: calc(40%);
-  height: calc(6%);
-  top: calc(46%);
-  right: 5%;
-  background-color: #56b4e9;
-}
-
-.training_and_preparation {
-  width: calc(85%);
-  height: calc(6%);
-  top: calc(63%);
-  left: 7.5%;
-  background-color: #56b4e9;
-}
-
-.ground_support {
-  width: calc(43%);
-  height: calc(7%);
-  top: calc(54%);
-  left: 5%;
-  background-color: #56b4e9;
-}
-
-.family_and_friends {
-  width: calc(43%);
-  height: calc(6%);
-  top: calc(46%);
-  left: 5%;
-  background-color: #56b4e9;
-}
-
-.exercise_equipment {
-  width: calc(43%);
-  height: calc(7%);
-  top: calc(54%);
-  right: 5%;
-  background-color: #56b4e9;
-}
-
-.food {
-  width: calc(28%);
-  height: calc(6%);
-  top: calc(71%);
-  left: 5%;
-  background-color: #56b4e9;
-}
-
-.medical_capability {
-  width: calc(58%);
-  height: calc(6%);
-  top: calc(71%);
-  right: 5%;
-  background-color: #56b4e9;
-}
-
-/*-----------------------------------------*/
-/*Boxes laying inside designed features*/
-.designed_features {
-  width: calc(100%);
-  height: calc(100% * 0.43);
-  background-color: #94ecff;
-}
-
-.environmental_monotony {
-  width: calc(52%);
-  height: calc(6%);
-  top: calc(42%);
-  right: 5%;
-  background-color: #56b4e9;
-}
-
-.environmental_control {
-  width: calc(65%);
-  height: calc(5%);
-  top: calc(50%);
-  right: 5%;
-  background-color: #56b4e9;
-}
-
-.layout {
-  width: calc(22%);
-  height: calc(5%);
-  top: calc(50%);
-  left: 5%;
-  background-color: #56b4e9;
-}
-
-.privacy {
-  width: calc(30%);
-  height: calc(5%);
-  top: calc(35%);
-  right: 5%;
-  background-color: #56b4e9;
-}
-
-.ergonomics {
-  width: calc(36%);
-  height: calc(5%);
-  top: calc(64%);
-  left: 5%;
-  background-color: #56b4e9;
-}
-
-.fixtures {
-  width: calc(33%);
-  height: calc(6%);
-  top: calc(42%);
-  left: 5%;
-  background-color: #56b4e9;
-}
-
-.reconfigurability {
-  width: calc(50%);
-  height: calc(5%);
-  top: calc(64%);
-  right: 5%;
-  background-color: #56b4e9;
-}
-
-.circulation {
-  width: calc(55%);
-  height: calc(5%);
-  top: calc(35%);
-  left: 5%;
-  background-color: #56b4e9;
-}
-.habitable_volume {
-  width: calc(55%);
-  height: calc(5%);
-  top: calc(57%);
-  left: 5%;
-  background-color: #56b4e9;
-}
-
-.lighting {
-  width: calc(30%);
-  height: calc(5%);
-  top: calc(57%);
-  right: 5%;
-  background-color: #56b4e9;
-}
-/*-----------------------------------------*/
-/*Boxes laying inside environmental stressors*/
-.environmental_stressors {
-  width: calc(100%);
-  height: calc(100% * 0.27);
-  background-color: #94ecff;
-}
-
-.light_dark_cycles {
-  width: calc(55%);
-  height: calc(5%);
-  top: calc(79%);
-  left: 5%;
-  background-color: #56b4e9;
-}
-
-.altered_gravity {
-  width: calc(50%);
-  height: calc(5%);
-  top: calc(92%);
-  left: 28%;
-  background-color: #56b4e9;
-}
-
-.atmosphere {
-  width: calc(44%);
-  height: calc(5%);
-  top: calc(85.5%);
-  left: 5%;
-  background-color: #56b4e9;
-}
-
-.radiation {
-  width: calc(30%);
-  height: calc(5%);
-  top: calc(79%);
-  right: 5%;
-  background-color: #56b4e9;
-}
-
-.acoustics {
-  width: calc(41%);
-  height: calc(5%);
-  top: calc(85.5%);
-  right: 5%;
-  background-color: #56b4e9;
-}
-
-/* .nutrition {
-  width: calc(35%);
-  height: calc(5%);
-  top: calc(92%);
-  left: 5%;
-  background-color: #56b4e9;
-} */
-/*-----------------------------------------*/
-/*Boxes laying inside operational stressors*/
-.operational_stressors {
-  width: calc(100%);
-  height: calc(100% * 0.2);
-  background-color: #94ecff;
-}
-
-.physical_workload {
-  width: calc(70%);
-  height: calc(5%);
-  top: calc(93%);
-  left: 15%;
-  background-color: #56b4e9;
-}
-
-.cognitive_workload {
-  width: calc(43%);
-  height: calc(6%);
-  top: calc(85.5%);
-  right: 5%;
-  background-color: #56b4e9;
-}
-
-.media_attention {
-  width: calc(43%);
-  height: calc(6%);
-  top: calc(85.5%);
-  left: 5%;
-  background-color: #56b4e9;
-}
-
-/* .conflicts{
-    width: calc(35%);
-    height: calc(5%);
-    position: absolute;
-    top: calc(86%);
-    right:2.5%;
-    background-color: #56B4E9;
-}
-
-.injuries{
-    width: calc(35%);
-    height: calc(5%);
-    position: absolute;
-    top: calc(92%);
-    left:15%;
-    background-color: #56B4E9;
-} */
-/*-----------------------------------------*/
-/*Boxes laying inside team processes*/
-.team_processes {
-  width: calc(100%);
-  height: calc(48%);
-  background-color: #ffcbfb;
-}
-
-.team_processes_invisible {
-  /*Overall mask for the bigger social composition box*/
-  position: absolute;
-  left: 0%;
-  height: 48%;
-  width: 100%;
-  top: 0.5%;
-  background-color: #ffcbfb;
-  opacity: 100%;
-}
-
-.transition_processes {
-  width: calc(80%);
-  height: calc(12%);
-  top: calc(6%);
-  background-color: #cc79a7;
-}
-
-.action_processes {
-  width: calc(80%);
-  height: calc(12%);
-  top: calc(20%);
-  background-color: #cc79a7;
-}
-
-.interpersonal_processes {
-  width: calc(80%);
-  height: calc(12%);
-  top: calc(34%);
-  background-color: #cc79a7;
-}
-/*-----------------------------------------*/
-/*Boxes laying inside individual processes*/
-.individual_processes {
-  width: calc(100%);
-  height: calc(50.5%);
-  background-color: #ffcbfb;
-}
-
-.stress_regulation {
-  width: calc(80%);
-  height: calc(12%);
-  top: calc(57.5%);
-  background-color: #cc79a7;
-}
-
-.place_attachment {
-  width: calc(80%);
-  height: calc(12%);
-  top: calc(71.5%);
-  background-color: #cc79a7;
-}
-
-.sleep {
-  width: calc(80%);
-  height: calc(12%);
-  top: calc(85.5%);
-  background-color: #cc79a7;
-}
-
-/*-----------------------------------------*/
-/*Boxes laying inside performance*/
-.behavioral_health_and_performance_outcomes {
-  width: calc(100%);
-  height: calc(100%);
-  background-color: #ffd54d;
-}
-
-.physical_health {
-  width: calc(80%);
-  height: calc(8%);
-  top: calc(9%);
-  left: 10%;
-  background-color: #e69f00;
-}
-
-.anxiety {
-  width: calc(42%);
-  height: calc(8%);
-  top: calc(29%);
-  left: 5%;
-  background-color: #e69f00;
-}
-
-.depression {
-  width: calc(42%);
-  height: calc(8%);
-  top: calc(69%);
-  right: 5%;
-  background-color: #e69f00;
-}
-
-.stress {
-  width: calc(42%);
-  height: calc(8%);
-  top: calc(39%);
-  left: 5%;
-  background-color: #e69f00;
-}
-
-.crew_performance {
-  width: calc(80%);
-  height: calc(8%);
-  top: calc(49%);
-  right: 10%;
-  background-color: #e69f00;
-}
-
-.situation_awareness {
-  width: calc(80%);
-  height: calc(8%);
-  top: calc(19%);
-  right: 10%;
-  background-color: #e69f00;
-}
-
-.trust {
-  width: calc(42%);
-  height: calc(8%);
-  top: calc(39%);
-  right: 5%;
-  background-color: #e69f00;
-}
-
-/*-----------------------------------------*/
-/*Boxes laying inside mood and effect*/
-/* .mood_and_effect {
-    width: calc(100%);
-    height: calc(100% * 0.55);
-    background-color: #ffd54d;
-    color: rgba(42, 41, 41, 0.668);
-} */
-
-.curiosity {
-  width: calc(42%);
-  height: calc(8%);
-  top: calc(69%);
-  left: 5%;
-  background-color: #e69f00;
-}
-
-.kinship {
-  width: calc(42%);
-  height: calc(8%);
-  top: calc(79%);
-  right: 5%;
-  background-color: #e69f00;
-}
-
-.boredom {
-  width: calc(42%);
-  height: calc(8%);
-  top: calc(79%);
-  left: 5%;
-  background-color: #e69f00;
-}
-
-.fatigue {
-  width: calc(42%);
-  height: calc(8%);
-  top: calc(89%);
-  left: 5%;
-  background-color: #e69f00;
-}
-
-.positive_mood {
-  width: calc(42%);
-  height: calc(8%);
-  top: calc(89%);
-  right: 5%;
-  background-color: #e69f00;
-}
-
-.nostalgia_homesickness {
-  width: calc(80%);
-  height: calc(8%);
-  top: calc(59%);
-  right: 10%;
-  background-color: #e69f00;
-}
-
-.autonomy {
-  width: calc(42%);
-  height: calc(8%);
-  top: calc(29%);
-  right: 5%;
-  background-color: #e69f00;
-}
-/*-----------------------------------------*/
-/*Right-most factor column*/
-.loss_of_mission {
-  width: calc(100%);
-  height: calc(100% * 0.33);
-  background-color: #b4b4b4;
-  align-items: center;
-  color: white;
-}
-
-.loss_of_crew_life {
-  width: calc(100%);
-  height: calc(100% * 0.33);
-  background-color: #b4b4b4;
-  align-items: center;
-  color: white;
-}
-
-.quality_of_life {
-  width: calc(100%);
-  height: calc(100% * 0.33);
-  background-color: #b4b4b4;
-  align-items: center;
-  color: white;
-}
-
-.greyed-out {
-  /*Specify what happens to the rest of elements upon clicking*/
-  background-color: grey;
-  color: rgba(0, 0, 0, 0.2);
-}
-
-.greyed-out-hover {
-  /*Specify what happens to the rest of elements upon hovering*/
-  background-color: grey;
-  color: rgba(0, 0, 0, 0.2);
-  transition: all 0.1s ease-in-out;
-}
-
-.clicked {
-  /*Specify what happens to the element when clicked*/
-  font-weight: 300;
+  box-sizing: border-box;
+  cursor: default;
+  position: relative;
+}
+
+/* Content wrapper */
+.content {
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* Title */
+.box-title {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+  line-height: 1.1;
+  transition: all 0.2s ease;
+}
+
+/* Explanation */
+.box-explanation {
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  max-height: 0;
+  line-height: 1.1;
+  transition: all 0.2s ease;
+}
+
+.content.show-explanation .box-explanation {
+  opacity: 1;
+  max-height: 200px;
+  margin-top: 10px;
 }
