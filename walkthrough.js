@@ -203,7 +203,7 @@ document.addEventListener("DOMContentLoaded", function () {
         hover: true,
         target: ".box:first-child",
         // timeout after hover (in ms)
-        timeout: 1000,
+        timeout: 500,
         // tooltip: tooltip at bottom of screen (instructs user)
         tooltip:
           '<strong style="color: #4CAF50;">Hover</strong> over boxes to see <br> their definitions',
@@ -223,6 +223,8 @@ document.addEventListener("DOMContentLoaded", function () {
       {
         hover: true,
         target: ".openness",
+        // timeout after hover (in ms)
+        timeout: 500,
         tooltip:
           'This is the last layer. <br> <strong style="color: #4CAF50;">Hover</strong> over a factor to see its definition and connections ->',
       },
@@ -230,18 +232,24 @@ document.addEventListener("DOMContentLoaded", function () {
         // click: has user click on target to move to next step. fake cursor is animated to lead user to click
         click: true,
         target: ".openness",
+        // timeout after hover (in ms)
+        timeout: 500,
         tooltip:
           '<strong style="color: #4CAF50;">Click</strong> on a factor to set the view',
       },
       {
         hover: true,
         target: ".curiosity",
+        // timeout after hover (in ms)
+        timeout: 500,
         tooltip:
           'Then <strong style="color: #4CAF50;">hover</strong> on a connection to read about their relationship ->',
       },
       {
         // clickanywhere: has user click anywhere on screen to move to next step. resets third layer.
         clickanywhere: true,
+        // timeout after hover (in ms)
+        timeout: 500,
         tooltip:
           '<strong style="color: #4CAF50;">Click anywhere</strong> to reset the view',
       },
@@ -288,7 +296,7 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
           </div>
           <br>
-          Use <strong style="color: #4CAF50;">+</strong> and <strong style="color: #4CAF50;">-</strong> buttons to move between layers<br><br>
+          Use <strong style="color: #4CAF50;">+</strong> and <strong style="color: #4CAF50;">-</strong> buttons in the corner to move between layers<br><br>
           The <strong style="color: #4CAF50;">?</strong> button summarizes this walkthrough
         `,
         buttons: true, // To show +, -, and ? buttons (previously hidden)
@@ -420,7 +428,7 @@ document.addEventListener("DOMContentLoaded", function () {
         step.tooltipElement = tooltip;
         setTimeout(() => {
           tooltip.classList.add("visible");
-        }, 10);
+        }, 500);
       }
 
       // **********
@@ -595,8 +603,15 @@ document.addEventListener("DOMContentLoaded", function () {
             fakeCursor.classList.remove("pulsing");
             highlightOverlay.style.opacity = "0";
 
-            // Automatically go to next step
-            nextStep();
+           if (step.timeout) {
+              // If we specify a timeout after hover, only proceed after timeout ms
+              setTimeout(() => {
+                nextStep();
+              }, step.timeout);
+            } else {
+              // Immediately proceed to next step
+              nextStep();
+            }
           };
 
           targetElement.addEventListener("click", onClick);

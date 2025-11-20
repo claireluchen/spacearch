@@ -2448,7 +2448,7 @@ document.addEventListener("DOMContentLoaded", function () {
     return tmp2;
   }
 // boxes that this one points to
-  function getRightBoxes(smallBoxName) {
+  function getChildBoxes(smallBoxName) {
     switch (smallBoxName) {
       case "crew_selection":
         return [
@@ -3429,7 +3429,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var content = boxContents[smallBoxName];
         explanationBox.innerHTML = `<div class="box-content"><div class="box-title"><strong>${content.title}</strong></div><div class="box-explanation">${content.explanation}</div></div>`;
         var relatedBoxes = getRelatedBoxes(smallBoxName);
-        var rightBoxes = getRightBoxes(smallBoxName);
+        var childBoxes = getChildBoxes(smallBoxName);
         innerBoxes.forEach(function (box) {
           var relatedBox = formatToSmallBoxName(box.textContent);
           var isRelated = relatedBoxes.includes(relatedBox);
@@ -3481,7 +3481,7 @@ document.addEventListener("DOMContentLoaded", function () {
               ) {
                 // do nothing
               } else {
-                if (rightBoxes.includes(relatedBox)) {
+                if (childBoxes.includes(relatedBox)) {
                   const arrow = arrowLine(
                     "." + smallBoxName,
                     "." + relatedBox,
@@ -3535,7 +3535,7 @@ document.addEventListener("DOMContentLoaded", function () {
         explanationBox.innerHTML = `<div class="box-content"><div class="box-title"><strong>${content.title}</strong></div><div class="box-explanation">${content.explanation}</div></div>`;
 
         var relatedBoxes = getRelatedBoxes(smallBoxName);
-        var rightBoxes = getRightBoxes(smallBoxName);
+        var childBoxes = getChildBoxes(smallBoxName);
 
         innerBoxes.forEach(function (box) {
           var relatedBox = formatToSmallBoxName(box.textContent);
@@ -3588,7 +3588,7 @@ document.addEventListener("DOMContentLoaded", function () {
               ) {
                 // do nothing
               } else {
-                if (rightBoxes.includes(relatedBox)) {
+                if (childBoxes.includes(relatedBox)) {
                   const arrow = arrowLine(
                     "." + smallBoxName,
                     "." + relatedBox,
